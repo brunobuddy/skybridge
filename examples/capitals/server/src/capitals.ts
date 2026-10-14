@@ -58,7 +58,7 @@ async function fetchAllCountriesMinimal(): Promise<RestCountryMinimal[]> {
 
   const fields = ["name", "capital", "capitalInfo", "cca2", "flags"].join(",");
   const response = await fetch(
-    `https://restcountries.com/v3.1/all?fields=${fields}`,
+    `https://restcountries.com/v3.2/all?fields=${fields}`,
   );
   if (!response.ok) {
     throw new Error(`RestCountries API error: ${response.status}`);
@@ -88,7 +88,7 @@ async function fetchCountryByCode(cca2: string): Promise<RestCountryFull> {
   ].join(",");
 
   const response = await fetch(
-    `https://restcountries.com/v3.1/alpha/${cca2}?fields=${fields}`,
+    `https://restcountries.com/v3.2/alpha/${cca2}?fields=${fields}`,
   );
   if (!response.ok) {
     throw new Error(`RestCountries API error: ${response.status}`);
